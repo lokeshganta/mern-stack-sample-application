@@ -22,13 +22,13 @@ const StudentList = () => {
   return (
     <div>
       <h2>Student List</h2>
-      <ul>
+      <ol>
         {students.map((student) => (
           <li key={student._id}>
             {student.firstName} {student.lastName} (Age: {student.age}, Grade: {student.grade})
           </li>
         ))}
-      </ul>
+      </ol>
     </div>
   );
 };

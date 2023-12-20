@@ -6,12 +6,7 @@ import StudentForm from './StudentForm';
 import StudentListItem from './StudentListItem';
 
 const StudentManagement = () => {
-  const [students, setStudents] = useState([{
-    "firstName": "Lokeshwar",
-    "lastName": "Ganta",
-    "age": "20",
-    "grade": "A"
-}]);
+  const [students, setStudents] = useState([]);
   const [selectedStudent, setSelectedStudent] = useState(null);
   
   useEffect(() => {
@@ -34,6 +29,7 @@ const StudentManagement = () => {
       const response = await axios.get('http://localhost:5000/students');
       setStudents(response.data);
       setSelectedStudent(null);
+      // setFormData({});
     } catch (error) {
       console.error('Error fetching updated data:', error);
     }
@@ -60,7 +56,9 @@ const StudentManagement = () => {
       <h1>Student Management System</h1>
       <StudentList students={students} />
       <StudentForm onSubmit={handleFormSubmit} initialData={selectedStudent} />
-      <ul>
+      <h2>Update or Delete Student Details Here</h2>
+
+      <objectl>
         {students.map((student) => (
           <StudentListItem
             key={student._id}
@@ -69,7 +67,7 @@ const StudentManagement = () => {
             onUpdate={setSelectedStudent}
           />
         ))}
-      </ul>
+      </objectl>
     </div>
   );
 };

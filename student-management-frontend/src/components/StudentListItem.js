@@ -15,10 +15,14 @@ const StudentListItem = ({ student, onDelete, onUpdate }) => {
   };
 
   return (
-    <li>
-      {student.firstName} {student.lastName} (Age: {student.age}, Grade: {student.grade})
-      <button onClick={handleUpdate}>Update</button>
-      <button onClick={handleDelete}>Delete</button>
+    <li className="student-list-item">
+      <div className="student-details">
+        {student.firstName} {student.lastName} (Age: {student.age}, Grade: {student.grade})
+      </div>
+      <div className="button-container">
+        <button onClick={handleUpdate}>Update</button>
+        <button onClick={handleDelete}>Delete</button>
+      </div>
     </li>
   );
 };

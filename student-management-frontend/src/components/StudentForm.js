@@ -27,6 +27,7 @@ const StudentForm = ({ onSubmit, initialData }) => {
       }
   
       console.log('Operation completed successfully.');
+      setFormData({});
   
       // Notify parent component (if provided) that the operation is complete
       if (onSubmit) {
@@ -38,7 +39,8 @@ const StudentForm = ({ onSubmit, initialData }) => {
   };
   
 
-  return (
+  return (<div>
+    <h2>Enter Student Details Here</h2>
     <form onSubmit={handleSubmit}>
       <label>
         First Name:
@@ -58,6 +60,7 @@ const StudentForm = ({ onSubmit, initialData }) => {
       </label>
       <button type="submit">{initialData ? 'Update' : 'Add'} Student</button>
     </form>
+    </div>
   );
 };
 
