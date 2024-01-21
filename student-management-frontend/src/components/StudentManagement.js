@@ -28,7 +28,7 @@ const StudentManagement = () => {
     try {
       const response = await axios.get('http://localhost:5000/students');
       setStudents(response.data);
-      setSelectedStudent(null);
+      setSelectedStudent(response.data);
       // setFormData({});
     } catch (error) {
       console.error('Error fetching updated data:', error);

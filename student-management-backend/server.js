@@ -10,7 +10,8 @@ const app = express();
 const PORT = process.env.PORT || 5000;
 
 // MongoDB Atlas connection string (replace with your actual connection string)
-const MONGODB_URI = 'mongodb+srv://root:root@sample-app.atqkepc.mongodb.net/students?retryWrites=true&w=majority';
+// const MONGODB_URI = 'mongodb+srv://root:root@sample-app.atqkepc.mongodb.net/students?retryWrites=true&w=majority';
+const MONGODB_URI = 'mongodb://first:V3g8obz2t6u04zPNueWqWDJcqpCCavjp0p13w3b1vF6EoQW73F4CzHwmQ6wLYaObBMOKIKeptFW3ACDbgGYACA==@first.mongo.cosmos.azure.com:10255/?ssl=true&replicaSet=globaldb&retrywrites=false&maxIdleTimeMS=120000&appName=@first@';
 
 mongoose.connect(MONGODB_URI, { useNewUrlParser: true, useUnifiedTopology: true });
 

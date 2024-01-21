@@ -1,9 +1,15 @@
 // StudentForm.js
 import React, { useState } from 'react';
 import axios from 'axios';
+import  { useEffect } from 'react';
 
 const StudentForm = ({ onSubmit, initialData }) => {
   const [formData, setFormData] = useState(initialData || {});
+
+  useEffect(() => {
+    // Update form data when initialData changes
+    setFormData(initialData || {});
+  }, [initialData]);
 
   const handleChange = (e) => {
     setFormData({
